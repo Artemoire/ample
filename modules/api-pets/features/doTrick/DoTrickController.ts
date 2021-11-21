@@ -7,7 +7,7 @@ export class DoTrickController {
   }
 
   handle(request: ControllerRequest) {
-    const { name } = request.query;
+    const { petName: name } = request.params;
 
     if (!name) return BadRequest("missing query param 'name'");
 

@@ -25,7 +25,7 @@ const storePetIntegration = ExpressApiIntegration(
   )
 )
 
-api.get('/', doTrickIntegration)
+api.get('/:petName/_trick', doTrickIntegration)
 
 api.put('/', storePetIntegration);
 

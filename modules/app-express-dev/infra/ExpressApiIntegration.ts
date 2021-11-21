@@ -6,7 +6,8 @@ import { ControllerResult } from "../../api-core/ControllerResult";
 
 const mapExpressRequest = (req: Request): ControllerRequest => ({
   payload: req.body,
-  query: req.query
+  query: req.query,
+  params: req.params
 });
 
 export const ExpressApiIntegration = (controller: ControllerDefinition) => async (req: Request, res: Response) => {
