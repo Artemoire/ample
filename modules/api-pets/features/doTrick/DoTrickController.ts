@@ -2,7 +2,7 @@ import { BadRequest, NotFound, Ok } from "../../../api-core/CommonResults";
 import { ControllerRequest } from "../../../api-core/ControllerRequest";
 import { DoTrickFeature } from "./DoTrickFeature";
 
-export class StorePetController {
+export class DoTrickController {
   constructor(private feature: DoTrickFeature) {
   }
 
