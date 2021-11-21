@@ -1,4 +1,4 @@
-import { BadRequest, NoContent } from "../../../api-core/CommonResults";
+import { BadRequest, Ok } from "../../../api-core/CommonResults";
 import { ControllerRequest } from "../../../api-core/ControllerRequest";
 import { StorePetFeature } from "./StorePetFeature";
 
@@ -7,20 +7,23 @@ export class StorePetController {
   }
 
   handle(request: ControllerRequest) {
-    const name = request.payload?.name;
-    const race = request.payload?.race || "muggle";
-    const { type } = request.query;
-
-    if (!type) return BadRequest("missing query param 'type'");
-    if (!(type in ["dog", "cat"])) return BadRequest("query param 'type' should be one of ['dog', 'cat']");
-    if (!name) return BadRequest("missing required property 'name' in request payload");
-
-    this.feature.does({
+    const {
       name,
       race,
       type
+    } = request.query;
+
+    if (!type) return BadRequest("missing query param 'type'");
+    if (!name) return BadRequest("mising query param 'name'");
+
+    if (!["dog", "cat"].includes(type)) return BadRequest("query param 'type' should be one of ['dog', 'cat']");
+
+    this.feature.does({
+      name,
+      race: race || "muggle",
+      type
     });
 
-    return NoContent;
+    return Ok("success");
   }
 }
