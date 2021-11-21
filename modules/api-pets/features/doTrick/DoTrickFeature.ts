@@ -27,7 +27,7 @@ const trickFormatter = (pet: PetDefinition) =>
   pet.race === "muggle" ?
     `${pet.name} the ${pet.type}, did a ${trickAdjective()} ${petTrick()}`
     :
-    `${pet.name} the ${pet.race} ${pet.type}, did a ${trickAdjective()} ${petTrick()}}`;
+    `${pet.name} the ${pet.race} ${pet.type}, did a ${trickAdjective()} ${petTrick()}`;
 
 export class DoTrickFeature {
   constructor(private store: PetStoreDefinition) {
