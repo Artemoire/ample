@@ -1,6 +1,6 @@
-import { devClients } from "../clients";
+import { clients } from "../clients";
 
-const { petClient } = devClients;
+const { petClient } = clients;
 
 describe("pets api", () => {
 

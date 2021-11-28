@@ -4,7 +4,7 @@
   "packageManager": "yarn@3.1.0",
   "scripts": {
     "start:dev": "node dist/modules/app-express-dev",
-    "test:regression": "jest --config=jest.regress.config.js",
+    "test": "jest --config=jest.regress.config.js",
     "build": "tsc --build",
     "clean": "rm -rf dist"
   },
