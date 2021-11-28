@@ -6,7 +6,7 @@ export const clientStore = new MockClientStore({
   '_root_': {
     id: '_root_',
     encryptedSecret: encrypt('12345'),
-    scope: 'introspect'
+    scope: 'introspect security:admin'
   },
   '_dummy_': {
     id: '_dummy_',
