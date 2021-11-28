@@ -10,7 +10,7 @@ const mapExpressRequest = (req: Request): ControllerRequest => ({
   headers: {}
 });
 
-export const ExpressApiIntegrationV2 = (controller: ControllerV2) => async (req: Request, res: Response) => {
+export const ProxyV2Integration = (controller: ControllerV2) => async (req: Request, res: Response) => {
   const mappedRequest = mapExpressRequest(req);
   try {
 
